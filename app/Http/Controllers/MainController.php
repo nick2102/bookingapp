@@ -39,7 +39,7 @@ class MainController extends Controller
                 ->withInput();
         }
 
-        \Stripe\Stripe::setApiKey("sk_test_LWYGSIf1m3R2DAa3sZQ4Dufv");
+        \Stripe\Stripe::setApiKey("YOUR API KEY HERE");
 
         // Store all input
         $inputs = $request->all();
@@ -89,7 +89,7 @@ class MainController extends Controller
     public function checkoutAction(Request $request)
     {
 
-        \Stripe\Stripe::setApiKey("sk_test_LWYGSIf1m3R2DAa3sZQ4Dufv");
+        \Stripe\Stripe::setApiKey("YOUR API KEY HERE");
 
 
         $errors = Validator::make($request->all(), [
@@ -126,7 +126,7 @@ class MainController extends Controller
         $amount = $request->the_price*100;
         $source = $request->source;
 
-        \Stripe\Stripe::setApiKey("sk_test_LWYGSIf1m3R2DAa3sZQ4Dufv");
+        \Stripe\Stripe::setApiKey("YOUR API KEY HERE");
         $charge = \Stripe\Charge::create(array(
             "amount" => $amount,
             "currency" => "eur",
